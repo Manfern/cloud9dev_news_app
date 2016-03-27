@@ -20,6 +20,6 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum." ]
 ]
 
-posts_list.each do |title, content|
-  Post.create( title: title, content: content )
+posts_list.each do |tit, cont|
+  Post.create( title: tit, content: cont )
 end
