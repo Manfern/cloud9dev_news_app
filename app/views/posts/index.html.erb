@@ -1,2 +1,38 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1 class="text-center">Самые интересные новости в сети!</h1>
+<!-- <div class="container"> -->
+	
+	<div class="button btn btn-primary news_b">
+						<%= link_to 'Добавить новость', new_post_path  %>
+					</div>
+	<div class="row text-center">
+		<div class="col-md-offset-1">
+		<% @posts.each do |post| %>
+			<div class="col-md-2">
+				<div class="front-image">
+					<%= image_tag post.image.url(:small) %>
+				</div>
+				<p class="front-post text-left">
+					<%= post.content.truncate(100) %>
+				</p>
+				<%# if admin_signed_in? %>
+					<div class="button btn btn-success">
+						<%= link_to 'Редактировать', edit_post_path(post) %> 
+					</div>
+					<div class="button btn btn-danger">
+			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+			  		</div>
+					<div class="button btn btn-info">
+						<%= link_to "Посмотреть", post %>
+					</div>
+					
+				<% #end %>
+				
+			</div>
+		<% end %>
+			
+		
+		<div class="col-md-offset-1">
+	</div>
+	
+
+</div>
