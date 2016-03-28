@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   # root "posts#index"
   get 'posts/index', to: "posts#index"
+  get 'posts/second', to: 'posts#second'
   resources :posts
   
   # get 'posts/index'
