@@ -7,12 +7,15 @@
 }
 .container{
     background-color: #e6e6e6;
+    height: 800px;
 }
 h1{
+    text-align: center;
     width: 100%;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    padding-top: 0px;
+    padding: 10px;
+    padding-top: 10px;
     background-color:red;
     color: #fff !Important;
 }
@@ -38,7 +41,7 @@ h1{
 }
 .button a{
     
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     display: block;
     
@@ -53,11 +56,9 @@ h1{
     color: orange;
 }
 .hide{
-    display: none;
+    // display: none;
 }
-.container{
-    // width: 1200px;
-}
+
 .col-md-2{
     background-color: #fff;
     padding: 0px !important;
@@ -79,9 +80,12 @@ h1{
 }
 .col-md-2:hover{
     background-color: #ECECEC;
+    cursor: pointer;
+}
+.col-md-2:hover .btn-more a{
+    color: #fff;
 }
 .btn-more{
-    
     border-radius: 0px !important;
     background-color: #ececec;
     height: 35px;
@@ -93,6 +97,8 @@ h1{
     
 }
 .btn-more a{
+    font-size: 16px;
+    padding-top: 5px;
     padding-bottom: 10px;
     display: block;
     color: #000;

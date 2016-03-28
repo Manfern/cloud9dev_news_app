@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
   
   # root "posts#index"
-  get 'posts/index', to: "posts#index"
-  get 'posts/second', to: 'posts#second'
-  resources :posts
+  # get 'posts/index', to: "posts#index"
+  # get 'posts/second', to: 'posts#second'
+  resources :posts do
+  
+    collection do
+      get 'index'
+    end
+    collection do
+      get 'second'
+    end
+    
+    
+  end
   
   # get 'posts/index'
 

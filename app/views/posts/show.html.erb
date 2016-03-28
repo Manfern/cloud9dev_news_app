@@ -5,13 +5,17 @@
 
 <div id="post_content">
 	<h1 class="title"><%= @post.title %></h1>
-	<%= image_tag @post.image.url(:medium) %>
-	<p class="content"><%= @post.content %></p>
+	<%= image_tag @post.image.url(:big) %>
+	<p class="content text-left"><%= @post.content %></p>
 	<p class="date">
 		Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 		<% #if user_signed_in? %>
-		 <%= link_to 'Edit', edit_post_path(@post) %> 
-		  <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		<div class="button btn btn-success">
+		 <%= link_to 'Редактировать', edit_post_path(@post) %> 
+		 </div>
+		 <div class="button btn btn-danger">
+		  <%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?' } %>
+		  </div>
 	  	<% #end %>
 	</p>
 	

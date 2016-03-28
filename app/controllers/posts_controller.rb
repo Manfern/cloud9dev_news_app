@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   def index
     @posts=Post.all
+    render layout: "application"
   end
   
   def second
     @posts=Post.all
     render layout: "second"
+    # redirect_to "posts#second"
   end
 
   def new
@@ -15,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post=Post.new(post_params)
 		if @post.save
-		  redirect_to @post
+		  redirect_to posts_path
 	  else
 		  render :new
 	  end
@@ -23,6 +25,7 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    render layout: "formpage"
   end
   
   def edit

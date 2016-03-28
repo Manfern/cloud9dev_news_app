@@ -1,6 +1,21 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cont-flex{
+    display: flex;
+}
+.top-row{
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+}
+.item{
+    display: flex-item;
+}
+.top-col{
+       display: flex-item;   
+    
+}
 .container-fluid{
     background-color: #e6e6e6;
     padding: 0px !important;
@@ -12,7 +27,7 @@ h1{
     width: 100%;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    padding-top: 0px;
+    padding-top: 10px;
     background-color:red;
     color: #fff !Important;
 }
@@ -53,7 +68,7 @@ h1{
     color: orange;
 }
 .hide{
-    display: none;
+    // display: none;
 }
 .container{
     // width: 1200px;
