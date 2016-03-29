@@ -120,3 +120,20 @@ p.front-post{
     padding: 10px;
     height: 100px;
 }
+.second{
+    .cont-flex{
+    display: flex;
+    }
+    .top-row{
+              display: flex;
+              flex-flow: row;
+              justify-content: center;
+    }
+    .item{
+        display: flex-item;
+    }
+    .top-col{
+           display: flex-item;   
+    
+}
+}
