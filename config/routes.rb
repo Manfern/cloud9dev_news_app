@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  root "posts#index"
   devise_for :admins
   # root "posts#index"
   # get 'posts/index', to: "posts#index"

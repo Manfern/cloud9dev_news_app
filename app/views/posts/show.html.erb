@@ -56,7 +56,7 @@
 		<p class="date">
 			Submitted <%= time_ago_in_words(@post.created_at) %> ago
 			</p>
-			<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
+			<div class="button btn btn-more text-left"><%= link_to "Подробнее", posts_path %></div>
 			<% if admin_signed_in? %>
 			<div class="hide-block">
 			<div class="button btn btn-info">

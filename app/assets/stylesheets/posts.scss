@@ -24,6 +24,7 @@ h1{
     padding: 10px;
 }
 .button{
+    
     padding: 0px 12px!important;
     margin: 10px;
     width: 100%;
@@ -66,6 +67,7 @@ h1{
     // display: table;
 }
 .news-block{
+    border-radius: 0 8px;
     background-color: #fff;
     padding: 0px !important;
     margin: 0px;
@@ -96,7 +98,8 @@ h1{
     width: 185px;
 }
 .btn-more{
-    border-radius: 0px !important;
+    border-radius: 0 8px!important;
+    
     background-color: #ececec;
     height: 35px;
     margin: 0px;
@@ -140,6 +143,7 @@ p.front-post{
         background-color: #fff;
     }
     .button{
+        
         // background-color: #2765AF;
     }
     
