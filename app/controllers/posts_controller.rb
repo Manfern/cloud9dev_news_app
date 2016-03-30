@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update,:destroy]
+  layout 'admin'
+  
   def index
     @posts=Post.all
     render layout: "application"
@@ -24,8 +27,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts=Post.all
     @post=Post.find(params[:id])
-    render layout: "formpage"
+    render layout: "application"
   end
   
   def edit
@@ -35,7 +39,7 @@ class PostsController < ApplicationController
   def update
     @post=Post.find(params[:id])
     if @post.update!(post_params)
-      redirect_to @post
+      redirect_to posts_path
     else
       render :edit
     end

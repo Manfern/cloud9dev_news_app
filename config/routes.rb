@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
   # root "posts#index"
   # get 'posts/index', to: "posts#index"
   # get 'posts/second', to: 'posts#second'

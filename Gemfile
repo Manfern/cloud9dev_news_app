@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 gem "paperclip"
 gem 'simple_form'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets

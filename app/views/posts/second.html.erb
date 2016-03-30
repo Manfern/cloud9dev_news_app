@@ -9,10 +9,13 @@
 					</div>
 	<div class=" cont-flex">
 	        <% @posts.each_with_index do |post, index| %>
-	            
-	           <div class="top-row">
-    	       <% if index<3 or index==0 %>
-                      <div class="top-col">
+	            <% if index==0 %>
+	            <!-- start top row -->
+	               <div class="top-row">
+	           <% end %>
+    	       <% if index<3%>
+    	       
+                      <div class="top-item">
                              <div class="front-image text-center">
             					<%= image_tag post.image.url(:thumb) %>
             				</div>
@@ -20,7 +23,7 @@
             					<%= post.content.truncate(40) %>
             				</p>
             				<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
-            				<%# if admin_signed_in? %>
+            				<% if admin_signed_in? %>
             				<div class="hide">
             					<div class="button btn btn-success">
             						<%= link_to 'Редактировать', edit_post_path(post) %> 
@@ -32,11 +35,78 @@
             						<%= link_to "Посмотреть", post %>
             					</div>
             				</div>	
+            				<% end %>
                           
                       </div>
                 <% end %>
-                    </div>
+                    
                     <% if index==3 %>
+                        </div> <!-- close top row -->
+                       <div class="side-col">
+                   <% end %>
+                   <% if index>=3 and index<=8 %>
+                       
+                       <div class="side-item">
+                           
+                             <div class="front-image text-center">
+            					<%= image_tag post.image.url(:thumb) %>
+            				</div>
+            				<p class="front-post text-left">
+            					<%= post.content.truncate(40) %>
+            				</p>
+            				<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
+            				<% if admin_signed_in? %>
+            				<div class="hide">
+            					<div class="button btn btn-success">
+            						<%= link_to 'Редактировать', edit_post_path(post) %> 
+            					</div>
+            					<div class="button btn btn-danger">
+            			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+            			  		</div>
+            					<div class="button btn btn-info">
+            						<%= link_to "Посмотреть", post %>
+            					</div>
+            				</div>	
+            				<% end %>
+                          
+                      </div>
+                   <% end %>
+                   <% if index==8 %>
+                 
+                       </div>
+                       <div class="pic-col">
+                   <% end %>
+                   <% if index>=8%>
+                       
+                       <div class="pic-col-item">
+                           
+                             <div class="front-image text-center">
+            					<%= image_tag post.image.url(:small) %>
+            				</div>
+            				<p class="front-post text-left">
+            					<%= post.content.truncate(40) %>
+            				</p>
+            				<!--<div class="button btn btn-more text-left"><%#= link_to "Подробнее", post %>-->
+            				<!--</div>-->
+            				<% if admin_signed_in? %>
+            				<div class="hide">
+            					<div class="button btn btn-success">
+            						<%= link_to 'Редактировать', edit_post_path(post) %> 
+            					</div>
+            					<div class="button btn btn-danger">
+            			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+            			  		</div>
+            					<div class="button btn btn-info">
+            						<%= link_to "Посмотреть", post %>
+            					</div>
+            					<% end %>
+            				</div>	
+                          
+                      </div>
+                   <% end %>
+                   <% if index==10 %>
+                 
+                       </div>
                        <% break %>
                    <% end %>
               <% end %>
