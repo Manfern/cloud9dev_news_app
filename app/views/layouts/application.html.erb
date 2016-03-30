@@ -10,8 +10,10 @@
 <body>
 <div class="container-fluid">
   <% if admin_signed_in? %>
+  <div class="hide-block">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  </div>
   <% end %>
   <%= yield %>
 </div>

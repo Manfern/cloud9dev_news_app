@@ -39,6 +39,8 @@ h1{
     
 }
 .row{
+    width: 100%;
+    // margin-left: 50px !important;
     display: inline-flex;
 }
 .button a{
@@ -80,9 +82,7 @@ h1{
     
     margin-left: 10px;
 }
-.row{
-    margin-left: 50px !important;
-}
+
 .row+.row{
     // margin-top: 20px;
 }
@@ -94,8 +94,32 @@ h1{
     color: #fff;
 }
 .btn{
+    border-radius: 0 8px!important;
+    background-color: #ececec;
+    height: 35px;
     margin: 0px;
-    width: 185px;
+    padding: 0px;
+    margin: 0px;
+    width: 120px;
+    a{
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    display: block;
+    color: #000;
+    }
+    a:hover{
+    color: #fff;
+    }
+}
+.second {
+    .random-block{
+        // margin-left: 170px;
+    }
+    .random-block .row{
+        width: 100%;
+        background-color: transparent!important;
+    }
 }
 .btn-more{
     border-radius: 0 8px!important;
@@ -104,22 +128,22 @@ h1{
     height: 35px;
     margin: 0px;
     padding: 0px;
-    width: 185
-    
-    // border-top: 1px solid grey !important; 
-    // border-bottom: 1px solid grey !important; 
-    
-}
-.btn-more a{
+    width: 185px;
+    a{
     font-size: 16px;
     padding-top: 5px;
     padding-bottom: 10px;
     display: block;
     color: #000;
-}
-.btn-more a:hover{
+    }
+    a:hover{
     color: #fff;
+    }
+    // border-top: 1px solid grey !important; 
+    // border-bottom: 1px solid grey !important; 
+    
 }
+
 .col-md-2:hover .btn-more{
     background-color: #2765af;
     color: #fff;

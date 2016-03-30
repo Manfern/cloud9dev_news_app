@@ -11,8 +11,8 @@
                 <% rows.each do |post| %>
                   <div class="col-md-2 news-block">
                       <div class="front-image text-center">
-        					<%= image_tag post.image.url(:small) %>
-        				</div>
+        					      <%= image_tag post.image.url(:small) %>
+        					   </div>
         				<p class="front-post text-left">
         					<%= post.content.truncate(70) %>
         				</p>
