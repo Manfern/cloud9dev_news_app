@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update,:destroy]
   layout 'admin'
-  
+  before_action :log_impression, only: [:show]
+
+  # impressionist :actions=>[:show]
+
   def index
     @posts=Post.all
     render layout: "application"
@@ -27,9 +30,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts=Post.all
+    
+    # Comment.order('comments.impressions_count DESC').limit(5)
     @post=Post.find(params[:id])
+    @posts2=Post.all
+    impressions = Impression.select("impressionable_id, count(*) as qty").where("impressionable_type = ?", 'Post').group('impressionable_type, impressionable_id').order('qty desc')
+    @posts=Post.joins(:impressions).where(impressions: {impressionable_id: impressions.map(&:impressionable_id)})
+    # @posts=Post.all.order('post.views DESC')
     render layout: "application"
+  end
+  
+  def log_impression
+    @post = Post.find(params[:id])
+    # this assumes you have a current_user method in your authentication system
+    @post.impressions.create(ip_address: request.remote_ip,user_id:current_admin)
   end
   
   def edit

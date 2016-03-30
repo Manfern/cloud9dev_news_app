@@ -10,7 +10,7 @@
 <div class="second">
 	<div class="container">
 		
-	        <% @posts.shuffle.each_with_index do |post, index| %>
+	        <% @posts.each_with_index do |post, index| %>
 	            <% if index==0 %>
 	            <!-- start top row -->
 	               <div class="row top-row text-left">
@@ -24,7 +24,7 @@
 								<%= post.content.truncate(100) %>
 								<div class="button btn  text-left"><%= link_to "Подробнее", post %></div>
 								<br style="clear: both;" /></p>
-            				
+            					<p><%=post.views %></p>
             				</div>
             				
             				
@@ -91,6 +91,7 @@
 	            				<p class="text-left">
 	            					<%= post.content.truncate(80) %>
 	            				</p>
+	            				<p><%=post.views %></p>
 	            				<!--<div class="button btn  text-left"><%#= link_to "Подробнее", post %>-->
 	            				<!--</div>-->
 	            				<% if admin_signed_in? %>
@@ -120,9 +121,11 @@
 	                           <div class="text-left">
 	            					<p><%= image_tag post.image.url(:thumb) %>
 									<%= post.content.truncate(80) %>
+									<p><%=post.views %></p>
 									<div class="button btn  text-left"><%= link_to "Подробнее", post %></div>
 									<br style="clear: both;" />
 									</p>
+									
 								</div>
 	            				<% if admin_signed_in? %>
 	            				<div class="hide-block">
@@ -152,7 +155,7 @@
 	</div>
 </div>                     
  <div class="container random-block">
-	        <% @posts.shuffle.each_slice(5) do |rows| %>
+	        <% @posts2.shuffle.each_slice(5) do |rows| %>
               <div class="row">
                  <div class="col-md-1"></div>
                 <% rows.each do |post| %>

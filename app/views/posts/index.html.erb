@@ -16,6 +16,11 @@
         				<p class="front-post text-left">
         					<%= post.content.truncate(70) %>
         				</p>
+        				<p><%=post.views %></p>
+        				<% post.views.save %>
+        				<p><%#post.impressionist_count %></p>
+        				
+
         				<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
         				<% if admin_signed_in? %>
         				<div class="hide-block">
