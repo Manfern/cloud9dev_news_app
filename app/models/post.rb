@@ -4,9 +4,9 @@ class Post < ActiveRecord::Base
     
     has_many :impressions, as: :impressionable
     
-    def views
-        impressions.size
-    end
+    # def views
+    #     impressions.size
+    # end
     
     def unique_impression_count
         impressions.group(:ip_address).size #UNTESTED: might not be correct syntax
