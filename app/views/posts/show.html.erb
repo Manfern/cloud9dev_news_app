@@ -153,13 +153,13 @@
 	    		
 	    		    
 	</div>
-</div>                     
- <div class="container random-block">
+                   
+ <div class=" random-block">
 	        <% @posts2.shuffle.each_slice(5) do |rows| %>
               <div class="row">
                  <div class="col-md-1"></div>
                 <% rows.each do |post| %>
-                  <div class="col-md-2 news-block">
+                  <div class="col-md-2 col-sx-12 news-block">
                       <div class="front-image text-center">
         					      <%= image_tag post.image.url(:small) %>
         					   </div>
@@ -187,9 +187,9 @@
               </div>
               
             <% end %>               
-    		           
+    		         </div>  
         			
-            
+     </div>         
     			
     		
     		
