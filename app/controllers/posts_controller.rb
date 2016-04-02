@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_admin!, only: [:new, :create, :edit, :update,:destroy]
   layout 'admin'
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update,:destroy]
+  
   before_action :log_impression, only: [:show]
 
   # impressionist :actions=>[:show]

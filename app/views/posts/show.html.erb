@@ -16,15 +16,15 @@
      
 	      <p><%= image_tag post.image.url(:thumb) %>
 				<%= post.content.truncate(100) %>
-				<div class="button btn  text-left">
+				<div class="button btn-more  text-left">
 					<%= link_to "Подробнее", post %>
 				</div>
 				<br style="clear: both;" /></p>
-	      <p><%=post.views %></p>				
+	      		
 	  
-	      <div class="hide-block">				
+	      <div class="hide-block text-center">				
 		      <% if admin_signed_in? %>
-		         
+		         <p class="views text-center"><%=post.views %></p>		
 		       	<div class="button btn btn-success">
 		          <%= link_to 'Редактировать', edit_post_path(post) %> 
 		        </div>
@@ -57,7 +57,7 @@
 				<p class="date">
 					Опубликовано <%= time_ago_in_words(@post.created_at) %> ago
 				</p>
-				<div class="button btn text-left">
+				<div class="button btn-more text-center">
 					<%= link_to "Подробнее", posts_path %>
 				</div>
 				<div class="hide-block">
@@ -95,11 +95,12 @@
 		            	<%= image_tag post.image.url(:medium) %>
 		            </div>
 		            <p class="text-left">
-		            	<%= post.content.truncate(60) %>
+		            	<%= link_to post.content.truncate(60), post %>
 		            </p>
-		            <p><%=post.views %></p>
-		            <div class="hide-block">		
+		            <div class="hide-block text-center">		
 		            	<% if admin_signed_in? %>
+		            <p class="text-center views"><%=post.views %></p>
+		            
 
 		            		<div class="button btn btn-success">
 		            			<%= link_to 'Редактировать', edit_post_path(post) %> 
@@ -127,7 +128,7 @@
 	           	<p><%= image_tag post.image.url(:thumb) %>
 							<%= post.content.truncate(80) %>
 							<p><%=post.views %></p>
-							<div class="button btn  text-left">
+							<div class="button btn-more  text-center">
 							<%= link_to "Подробнее", post %>
 							</div>
 							<br style="clear: both;" /></p>					
@@ -175,7 +176,7 @@
 	        <p class="front-post text-left">
 	        	<%= post.content.truncate(70) %>
 	        </p>
-	        <div class="button btn btn-more text-left">
+	        <div class="button btn-more text-center">
 	        	<%= link_to "Подробнее", post %>
 	        </div>
 		      <div class="hide-block">
@@ -201,4 +202,4 @@
 	<% end %>               
 	        						
 </div>  	
-    		
+</div>

@@ -1,7 +1,7 @@
 <h1 class="text-center">Самые интересные новости в сети!</h1>
 <!-- <div class="container"> -->
-	
-	<div class="button btn btn-primary news_b hide">
+<div id="main">
+	<div class="button btn btn-primary news_b hide-block">
 						<%= link_to 'Добавить новость', new_post_path  %>
 	</div>
 
@@ -16,13 +16,14 @@
         				<p class="front-post text-left">
         					<%= post.content.truncate(70) %>
         				</p>
-        				<p><%=post.views %></p>
+        				
         				<%# post.views.save %>
         				<p><%#post.impressionist_count %></p>
         				
 
         				<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
         				<% if admin_signed_in? %>
+        				<p class="text-center views"><%=post.views %></p>
         				<div class="hide-block">
         					<div class="button btn btn-success">
         						<%= link_to 'Редактировать', edit_post_path(post) %> 
@@ -43,7 +44,7 @@
               
             <% end %>
     		
-    		    
+</div>    
                     
                         
                 

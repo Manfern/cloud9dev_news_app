@@ -11,7 +11,14 @@
     // height: 100%;
 }
 
-
+#main{
+  a{
+    color: #fff;
+  }
+  .btn-more a{
+    color: #000;
+  }
+}
 .random-block{
     
     width: 1200px !Important;
@@ -19,8 +26,8 @@
 h1{
     text-align: center;
     width: 100%;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+    margin-top: 0px -15px 0px -15 !important;
+  
     padding: 10px;
     padding-top: 10px;
     background-color: #2765af;
@@ -68,7 +75,7 @@ h1{
 }
 
 .hide-block{
-    display: none;
+    // display: none;
 }
 
 .col-md-2{
@@ -100,14 +107,18 @@ h1{
 .col-md-2:hover .btn-more a{
     // color: #fff;
 }
+#header h1{
+  background-color: #993366;
+}
 .btn{
     border-radius: 0 8px!important;
     background-color: #ececec;
+    color: #000;
     height: 35px;
     margin: 0px;
     padding: 0px;
     margin: 0px;
-    width: 120px;
+    width: 214px;
     a{
     font-size: 16px;
     padding-top: 5px;
@@ -120,12 +131,30 @@ h1{
     }
 }
 .second {
+    .hide-block .btn a{
+      color: #fff;
+    }
+    .btn a{
+      color: #fff;    }
+    .btn-more{
+              width: 210px;
+              float: left;
+              a {
+                    color: #000;
+                }
+            }
     .random-block{
         margin-left: 20px;
         .col-md-2{
             width: 205px !important;
             .btn-more{
-                width: 100% !important;
+                width: 204px !important;
+            }
+            .btn-more a{
+                color: #000;
+            }
+            .btn a{
+              color: #fff;
             }
         }
         .col-md-1{
@@ -165,7 +194,7 @@ h1{
     padding-top: 5px;
     padding-bottom: 10px;
     display: block;
-    color: #000;
+    color: #fff;
     }
     a:hover{
     color: #fff;
@@ -217,9 +246,16 @@ p.front-post{
     // }
     .top-row{
             .button{
-                background-color: #2765af;
+                // background-color: #2765af;
                 a {
                     color: #fff;
+                }
+            }
+            .btn-more{
+              width: 110px;
+              float: left;
+              a {
+                    color: #000;
                 }
             }
             .button:hover{
@@ -246,7 +282,7 @@ p.front-post{
         width: 33%;
     }
     #post_content{
-        float:left;
+        float: left;
         border-radius: 0 8px;
         h2{
             background-color: #fff;
@@ -267,6 +303,7 @@ p.front-post{
         .button{
             width: 100%;
         }
+      
     }
     .side-col{
         float:left;
