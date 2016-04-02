@@ -3,13 +3,13 @@
 	
 	<div class="button btn btn-primary news_b hide">
 						<%= link_to 'Добавить новость', new_post_path  %>
-					</div>
-	<div class="container">
+	</div>
+
 	        <% @posts.each_slice(5) do |rows| %>
               <div class="row">
-                 <div class="col-md-1"></div>
+                 <div class="col-md-1 "></div>
                 <% rows.each do |post| %>
-                  <div class="col-md-2 col-sx-12 news-block">
+                  <div class="col-md-2  news-block">
                       <div class="front-image text-center">
         					      <%= image_tag post.image.url(:small) %>
         					   </div>
@@ -38,7 +38,7 @@
                       
                   </div>
                 <% end %>
-                <div class="col-md-1"></div>
+                <div class="col-md-1 col-xs-1"></div>
               </div>
               
             <% end %>

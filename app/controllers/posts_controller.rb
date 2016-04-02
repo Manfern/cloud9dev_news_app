@@ -10,11 +10,11 @@ class PostsController < ApplicationController
     render layout: "application"
   end
   
-  def second
-    @posts=Post.all
-    render layout: "second"
-    # redirect_to "posts#second"
-  end
+  # def second
+  #   @posts=Post.all
+  #   render layout: "second"
+  #   # redirect_to "posts#second"
+  # end
 
   def new
     @post=Post.new

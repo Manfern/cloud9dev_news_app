@@ -1,195 +1,204 @@
 <h1 class="text-center">Самые интересные новости в сети!</h1>
-<!-- <div class="container"> -->
-
-
-
-
-
-
 	
 <div class="second">
-	<div class="container">
-		
-	        <% @posts.each_with_index do |post, index| %>
-	            <% if index==0 %>
+
+<!-- start if news loop -->
+<% @posts.each_with_index do |post, index| %>
+
+	<% if index==0 %>
 	            <!-- start top row -->
-	               <div class="row top-row text-left">
-	           <% end %>
-    	       <% if index<3%>
+		<div class="row top-row text-left">
+	<% end %>
+
+  <% if index<3 %>
     	       
-                      <div class="top-item">
-                             <div class="text-left">
-            					<p>
-            					<%= image_tag post.image.url(:thumb) %>
-								<%= post.content.truncate(100) %>
-								<div class="button btn  text-left"><%= link_to "Подробнее", post %></div>
-								<br style="clear: both;" /></p>
-            					<p><%=post.views %></p>
-            				</div>
-            				
-            				
-            				<% if admin_signed_in? %>
-            				<div class="hide-block">
-            					<div class="button btn btn-success">
-            						<%= link_to 'Редактировать', edit_post_path(post) %> 
-            					</div>
-            					<div class="button btn btn-danger">
-            			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-            			  		</div>
-            					<div class="button btn btn-info">
-            						<%= link_to "Посмотреть", post %>
-            					</div>
-            				</div>	
-            				<% end %>
-                          
-                      </div>
-                <% end %>
+      <div class="top-item text-left">
+     
+	      <p><%= image_tag post.image.url(:thumb) %>
+				<%= post.content.truncate(100) %>
+				<div class="button btn  text-left">
+					<%= link_to "Подробнее", post %>
+				</div>
+				<br style="clear: both;" /></p>
+	      <p><%=post.views %></p>				
+	  
+	      <div class="hide-block">				
+		      <% if admin_signed_in? %>
+		         
+		       	<div class="button btn btn-success">
+		          <%= link_to 'Редактировать', edit_post_path(post) %> 
+		        </div>
+		        <div class="button btn btn-danger">
+		          <%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		        </div>
+		        <div class="button btn btn-info">
+		            		<%= link_to "Посмотреть", post %>
+		        </div>
+	       
+	        <% end %>
+        </div>	                 
+      </div>
+	<% end %>
                     
-                    <% if index==3 %>
-                        </div> <!-- close top row -->
+	<% if index==3 %>
+	  </div> <!-- close top row -->
+	  <div class="row second-row"> <!-- open second row, big post, pic and block -->
+	
 <!--Full news block -->
-<div class="row">
-	<div id="post_content">
-		<h2>Новости на сегодня</h2>
-		<h3><%=  @post.title %></h3>
-		<%= image_tag @post.image.url(:big) %>
-		<p class="content text-left"><%= @post.content.truncate(200) %></p>
-		<p class="date">
-			Submitted <%= time_ago_in_words(@post.created_at) %> ago
-			</p>
-			<div class="button btn text-left"><%= link_to "Подробнее", posts_path %></div>
-			<% if admin_signed_in? %>
-			<div class="hide-block">
-			<div class="button btn btn-info">
-				<%= link_to 'На главную', posts_path %>
-			</div>
-			<div class="button btn btn-success">
-			 	<%= link_to 'Редактировать', edit_post_path(@post) %> 
-			 </div>
-			 <div class="button btn btn-danger">
-			  	<%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?' } %>
-			  </div>
-		
-			<div class="button btn btn-primary news_b hide">
+
+			<div id="post_content">
+				<h2>Новости на сегодня</h2>
+				<h3><%=  @post.title %></h3>
+				<div class="image">
+					<%= image_tag @post.image.url(:big) %>
+				</div>
+				<p class="content text-left">
+					<%= @post.content.truncate(200) %></p>
+				<p class="date">
+					Опубликовано <%= time_ago_in_words(@post.created_at) %> ago
+				</p>
+				<div class="button btn text-left">
+					<%= link_to "Подробнее", posts_path %>
+				</div>
+				<div class="hide-block">
+
+					<% if admin_signed_in? %>
+						
+						<div class="button btn btn-info">
+							<%= link_to 'На главную', posts_path %>
+						</div>
+						<div class="button btn btn-success">
+							<%= link_to 'Редактировать', edit_post_path(@post) %> 
+						</div>
+						<div class="button btn btn-danger">
+							<%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?' } %>
+						</div>
+						<div class="button btn btn-primary news_b hide">
 							<%= link_to 'Добавить новость', new_post_path  %>
-		</div>
-		</div>
-		<% end %>
-	</div>
-	<!-- end of full news block -->
-	                        
-	                        
-	                        
-	                       <div class="pic-col">
-	                   <% end %>
-	                   <% if index>=3 and index<=5 %>
-	                       <div class="pic-col-item">
-	                           
-	                             <div class="text-center">
-	            					<%= image_tag post.image.url(:medium) %>
-	            				</div>
-	            				<p class="text-left">
-	            					<%= post.content.truncate(80) %>
-	            				</p>
-	            				<p><%=post.views %></p>
-	            				<!--<div class="button btn  text-left"><%#= link_to "Подробнее", post %>-->
-	            				<!--</div>-->
-	            				<% if admin_signed_in? %>
-	            				<div class="hide-block">
-	            					<div class="button btn btn-success">
-	            						<%= link_to 'Редактировать', edit_post_path(post) %> 
-	            					</div>
-	            					<div class="button btn btn-danger">
-	            			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-	            			  		</div>
-	            					<div class="button btn btn-info">
-	            						<%= link_to "Посмотреть", post %>
-	            					</div>
-	            					<% end %>
-	            				</div>	
-	                          
-	                      </div>
-	                       
-	                   <% end %>
-	                   <% if index==5 %>
-	                 
-	                       </div>
-	                       <div class="side-col">
-	                   <% end %>
-	                   <% if index>=5%>
-	                       <div class="side-item">
-	                           <div class="text-left">
-	            					<p><%= image_tag post.image.url(:thumb) %>
-									<%= post.content.truncate(80) %>
-									<p><%=post.views %></p>
-									<div class="button btn  text-left"><%= link_to "Подробнее", post %></div>
-									<br style="clear: both;" />
-									</p>
-									
+						</div>
+					
+					<% end %>
+				</div>
+			
+					
+				</div><!-- end of full news block --> 	                        
+	<% end %>                 
+	<% if index==4 %>
+			  
+			<div class="pic-col">
+	<% end %>
+	                  
+	    <% if index>=4 and index<=6 %>
+	        	<div class="pic-col-item">
+	              
+		            <div class="text-center">
+		            	<%= image_tag post.image.url(:medium) %>
+		            </div>
+		            <p class="text-left">
+		            	<%= post.content.truncate(60) %>
+		            </p>
+		            <p><%=post.views %></p>
+		            <div class="hide-block">		
+		            	<% if admin_signed_in? %>
+
+		            		<div class="button btn btn-success">
+		            			<%= link_to 'Редактировать', edit_post_path(post) %> 
+		            		</div>
+		            		<div class="button btn btn-danger">
+		            			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		            		</div>
+		            		<div class="button btn btn-info">
+		            				<%= link_to "Посмотреть", post %>
+		            		</div>
+		            		<% end %>
 								</div>
-	            				<% if admin_signed_in? %>
-	            				<div class="hide-block">
-	            					<div class="button btn btn-success">
-	            						<%= link_to 'Редактировать', edit_post_path(post) %> 
-	            					</div>
-	            					<div class="button btn btn-danger">
-	            			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-	            			  		</div>
-	            					<div class="button btn btn-info">
-	            						<%= link_to "Посмотреть", post %>
-	            					</div>
-	            				</div>	
-	            				<% end %>
+
+						</div>
+	    <% end %>
+	            		
+	    <% if index==6 %> 
+	        </div><!-- end of pic col block -->
+
+	        <div class="side-col"><!-- start of side col block -->
+	     <% end %>
+	    <% if index>=6%>
+	        <div class="side-item">
+	          <div class="text-left">
+	           	<p><%= image_tag post.image.url(:thumb) %>
+							<%= post.content.truncate(80) %>
+							<p><%=post.views %></p>
+							<div class="button btn  text-left">
+							<%= link_to "Подробнее", post %>
+							</div>
+							<br style="clear: both;" /></p>					
+						</div>
+						<div class="hide-block">
+		          <% if admin_signed_in? %>
+		            
+		            		<div class="button btn btn-success">
+		            			<%= link_to 'Редактировать', edit_post_path(post) %> 
+		            		</div>
+		            		<div class="button btn btn-danger">
+		            			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		            		</div>
+		            		<div class="button btn btn-info">
+		            			<%= link_to "Посмотреть", post %>
+		            		</div>
+		            				
+		          <% end %>
+	          </div>	
 	                          
-	                      </div>
+	    	</div>
 	                       
-	                   <% end %>
-	                   <% if index==10 %>
+	    <% end %>
+
+	    <% if index==11 %>
 	                 
-	                       </div>
-	                       <% break %>
-	                   <% end %>
-	              <% end %>
-	    		
+	        </div><!-- end of side col block -->
+	    </div><!-- close second row bit news+pic-block+col-block -->
+	       <% break %>
+	    <% end %>
+
+<% end %>
+ <!-- end of news loop -->
 	    		    
-	</div>
-                   
- <div class=" random-block">
-	        <% @posts2.shuffle.each_slice(5) do |rows| %>
-              <div class="row">
-                 <div class="col-md-1"></div>
-                <% rows.each do |post| %>
-                  <div class="col-md-2 col-sx-12 news-block">
-                      <div class="front-image text-center">
-        					      <%= image_tag post.image.url(:small) %>
-        					   </div>
-        				<p class="front-post text-left">
-        					<%= post.content.truncate(70) %>
-        				</p>
-        				<div class="button btn btn-more text-left"><%= link_to "Подробнее", post %></div>
-        				<% if admin_signed_in? %>
-        				<div class="hide-block">
-        					<div class="button btn btn-success">
-        						<%= link_to 'Редактировать', edit_post_path(post) %> 
-        					</div>
-        					<div class="button btn btn-danger">
-        			  			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-        			  		</div>
-        					<div class="button btn btn-info">
-        						<%= link_to "Посмотреть", post %>
-        					</div>
-        				</div>
-        				<% end %>
-                      
-                  </div>
-                <% end %>
-                <div class="col-md-1"></div>
-              </div>
-              
-            <% end %>               
-    		         </div>  
-        			
-     </div>         
-    			
-    		
+
+<div class="random-block row">               
+	<% @posts2.shuffle.each_slice(5) do |rows| %>
+	              
+	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
+	    <% rows.each do |post| %>
+	      <div class="col-md-2 col-xs-5 col-sm-5 news-block">
+	      	<div class="front-image text-center">
+	        	<%= image_tag post.image.url(:small) %>
+	        </div>
+	        <p class="front-post text-left">
+	        	<%= post.content.truncate(70) %>
+	        </p>
+	        <div class="button btn btn-more text-left">
+	        	<%= link_to "Подробнее", post %>
+	        </div>
+		      <div class="hide-block">
+		      	<% if admin_signed_in? %>
+		        				
+		        	<div class="button btn btn-success">
+		        		<%= link_to 'Редактировать', edit_post_path(post) %> 
+		        	</div>
+		        	<div class="button btn btn-danger">
+		        		<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		        	</div>
+		        	<div class="button btn btn-info">
+		        		<%= link_to "Посмотреть", post %>
+		        	</div>
+		        				
+		        <% end %>
+		      </div>
+	                      
+	      </div>
+	    <% end %>
+	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
+	              
+	<% end %>               
+	        						
+</div>  	
     		

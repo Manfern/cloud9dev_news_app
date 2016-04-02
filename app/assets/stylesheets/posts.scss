@@ -6,15 +6,15 @@
     padding: 0px !important;
 }
 .container{
-    width: 1170px;
-    background-color: #e6e6e6;
+    width: 1200px;
+    background-color: #fff;
     // height: 100%;
 }
 
 
 .random-block{
     
-    // width: 1200px !Important;
+    width: 1200px !Important;
 }
 h1{
     text-align: center;
@@ -48,7 +48,7 @@ h1{
 .row{
     width: 100%;
     // margin-left: 50px !important;
-    display: inline-flex;
+    // display: inline-flex;
 }
 .button a{
     
@@ -121,15 +121,26 @@ h1{
 }
 .second {
     .random-block{
-        // margin-left: 170px;
+        margin-left: 20px;
         .col-md-2{
-            width: 215px !important;
+            width: 205px !important;
             .btn-more{
                 width: 100% !important;
             }
         }
         .col-md-1{
+            // display:none;
+        }
+        .col-xs-1{
             display:none;
+        }
+        .col-xs-5{
+            // width: 41.6%;
+            // display:none;
+        }
+        .col-xs-5+.col-xs-5{
+        
+            margin-left: 10px;
         }
         .col-md-2+.col-md-2{
         
@@ -137,7 +148,7 @@ h1{
         }
     }
     .random-block .row{
-        // width: 100%;
+        width: 100%;
         background-color: transparent!important;
     }
 }
@@ -148,7 +159,7 @@ h1{
     height: 35px;
     margin: 0px;
     padding: 0px;
-    width: 185px;
+    width: 100%;
     a{
     font-size: 16px;
     padding-top: 5px;
@@ -200,10 +211,10 @@ p.front-post{
         color: #fff;
     
     }
-    .cont-flex{
-    display: flex;
+    // .cont-flex{
+    // display: flex;
     
-    }
+    // }
     .top-row{
             .button{
                 background-color: #2765af;
@@ -235,6 +246,7 @@ p.front-post{
         width: 33%;
     }
     #post_content{
+        float:left;
         border-radius: 0 8px;
         h2{
             background-color: #fff;
@@ -257,6 +269,7 @@ p.front-post{
         }
     }
     .side-col{
+        float:left;
         border-radius: 0 8px;
         width: 467px;
         float: right;
@@ -265,7 +278,7 @@ p.front-post{
         }
         img{
             height: 112px;
-            width: 112;
+            width: 112px;
             float: left; 
             margin: 0px 10px 10px 0px;
         }
@@ -273,6 +286,7 @@ p.front-post{
     
     
     .pic-col{
+        float:left;
         border-radius: 0 8px;
         width: 220px;
         p{
@@ -294,5 +308,10 @@ p.front-post{
     .top-col{
         float: left; 
         margin: 0px 10px 10px 0px;
+    }
+}
+@media (max-width: 990px){
+    .side-col{
+        display: none;
     }
 }
