@@ -1,10 +1,16 @@
 <h1 class="text-center">Самые интересные новости в сети!</h1>
 <!-- <div class="container"> -->
 <div id="main">
-	<div class="button btn btn-primary news_b hide-block">
-						<%= link_to 'Добавить новость', new_post_path  %>
-	</div>
-
+  <div class="hide-block">
+    <% if admin_signed_in? %>
+    	<div class="button btn btn-primary news_b hide-block">
+    						<%= link_to 'Добавить новость', new_post_path  %>
+    	</div>
+    	<div class="button btn btn-danger news_b hide-block">
+    						<%= link_to 'Выйти из админки', destroy_admin_session_path  %>
+    	</div>
+  	<% end %>
+  </div>
 	        <% @posts.each_slice(5) do |rows| %>
               <div class="row">
                  <div class="col-md-1 "></div>

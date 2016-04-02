@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins
+  devise_scope :admin do
+    get 'admins/sign_out', to: "devise/sessions#destroy"
+  end
   root "posts#index"
   
   # root "posts#index"
