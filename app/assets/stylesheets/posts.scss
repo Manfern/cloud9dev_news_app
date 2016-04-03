@@ -6,6 +6,7 @@
     padding: 0px !important;
 }
 .container{
+  padding-right: 10px;
     width: 1200px !important;
     background-color: #fff;
     // height: 100%;
@@ -68,6 +69,7 @@ h1{
     
 }
 .row{
+  margin-top: 10px;
     width: 100%;
     // margin-left: 50px !important;
     // display: inline-flex;
@@ -94,12 +96,16 @@ h1{
 }
 
 .col-md-2{
+    background-color: #f7f7f7;
+    // border-radius: 0 8px;
+    // border: 1px solid #D8D8D8;
     
     // display: table;
 }
 .news-block{
     border-radius: 0 8px;
-    background-color: #fff;
+    background-color: #f7f7f7;
+            
     padding: 0px !important;
     margin: 0px;
     // border: 1px solid grey;
@@ -171,8 +177,11 @@ h1{
                     }
     }
     .random-block{
-        margin-left: 20px;
+        margin-left: 40px;
         .col-md-2{
+            background-color: #f7f7f7;
+            // border-radius: 0 8px;
+            // border: 1px solid #D8D8D8;
             width: 205px !important;
             .btn-more{
                 width: 204px !important;
@@ -256,12 +265,21 @@ h1{
 .second{
     .container{
         // height: 100%;
-        background-color: #e6e6e6;
+        background-color: #fff
     }
     .container .row{
         background-color: #fff;
     }
-    
+    #post_content{
+      // background-color: #f7f7f7;
+      // border-radius: 0 8px;
+      // border: 1px solid #D8D8D8;
+      height: 887px;
+      margin-left: 20px;
+    }
+    .row{
+      margin-top: 10px;
+    }
     .button{
         
         // background-color: #2765AF;
@@ -290,8 +308,9 @@ h1{
             .btn-more{
               width: 110px;
               float: left;
+              background-color: #2765AF;
               a {
-                    color: #000;
+                    color: #fff;
                 }
             }
             .button:hover{
@@ -304,8 +323,13 @@ h1{
             border-radius: 0 8px;
             padding: 10px;
             margin-top: 20px;
+            margin-left: 0px;
+            margin-right: 10px;
             margin-bottom: 20px;
             width: 100%;
+            // background-color: #f7f7f7;
+            // border-radius: 0 8px;
+            // border: 1px solid #D8D8D8;
             p{
             margin: 10px;
             }
@@ -342,10 +366,15 @@ h1{
       
     }
     .side-col{
+        // background-color: #f7f7f7;
+        // border-radius: 0 8px;
+        // border: 1px solid #D8D8D8;
         float:left;
         border-radius: 0 8px;
         width: 467px;
         float: right;
+        height: 887px;
+        padding-right: 10px;
         .btn-more{
           width: 150px;
         }
@@ -362,6 +391,9 @@ h1{
     
     
     .pic-col{
+        // background-color: #f7f7f7;
+        // border-radius: 0 8px;
+        // border: 1px solid #D8D8D8;
         float:left;
         border-radius: 0 8px;
         width: 220px;

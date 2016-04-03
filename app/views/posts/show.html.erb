@@ -17,7 +17,7 @@
 	      <p><%= image_tag post.image.url(:thumb) %>
 				<%= post.content.truncate(100) %>
 				<div class="button btn-more  text-left">
-					<%= link_to "Подробнее", post %>
+					<%= link_to "Подробнее", post.market_url %>
 				</div>
 				<br style="clear: both;" /></p>
 	      		
@@ -95,7 +95,7 @@
 		            	<%= image_tag post.image.url(:medium) %>
 		            </div>
 		            <p class="text-left">
-		            	<%= link_to post.content.truncate(60), post %>
+		            	<%= link_to post.content.truncate(60), post.market_url %>
 		            </p>
 		            <div class="hide-block text-center">		
 		            	<% if admin_signed_in? %>
@@ -129,7 +129,7 @@
 							<%= post.content.truncate(80) %>
 
 							<div class="button btn-more  text-center">
-							<%= link_to "Подробнее", post %>
+							<%= link_to "Подробнее", post.market_url %>
 							</div>
 							<br style="clear: both;" /></p>					
 						</div>
@@ -166,7 +166,7 @@
 
 <div class="random-block row">               
 	<% @posts2.shuffle.each_slice(5) do |rows| %>
-	              
+	  <div class="row">
 	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
 	    <% rows.each do |post| %>
 	      <div class="col-md-2 col-xs-5 col-sm-5 news-block">
@@ -177,7 +177,7 @@
 	        	<%= post.content.truncate(70) %>
 	        </p>
 	        <div class="button btn-more text-center">
-	        	<%= link_to "Подробнее", post %>
+	        	<%= link_to "Подробнее", post.market_url %>
 	        </div>
 		      <div class="hide-block">
 		      	<% if admin_signed_in? %>
@@ -198,7 +198,7 @@
 	      </div>
 	    <% end %>
 	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
-	              
+	   </div>           
 	<% end %>               
 	        						
 </div>  	
