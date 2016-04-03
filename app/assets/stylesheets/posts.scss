@@ -6,7 +6,7 @@
     padding: 0px !important;
 }
 .container{
-    width: 1200px;
+    width: 1200px !important;
     background-color: #fff;
     // height: 100%;
 }
@@ -387,7 +387,13 @@ h1{
     }
 }
 @media (max-width: 990px){
-    .side-col{
-        display: none;
+    // .side-col{
+    //     display: none;
+    // }
+    .container-fluid{
+      background-color: #fff;
+    }
+    .container{
+      background-color: #fff;
     }
 }
