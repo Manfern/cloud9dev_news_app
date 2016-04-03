@@ -1,4 +1,4 @@
-<h1 class="text-center">Самые интересные новости в сети!</h1>
+
 	
 <div class="second">
 
@@ -127,7 +127,7 @@
 	          <div class="text-left">
 	           	<p><%= image_tag post.image.url(:thumb) %>
 							<%= post.content.truncate(80) %>
-							<p><%=post.views %></p>
+
 							<div class="button btn-more  text-center">
 							<%= link_to "Подробнее", post %>
 							</div>
@@ -135,7 +135,7 @@
 						</div>
 						<div class="hide-block">
 		          <% if admin_signed_in? %>
-		            
+		            	<p><%=post.views %></p>
 		            		<div class="button btn btn-success">
 		            			<%= link_to 'Редактировать', edit_post_path(post) %> 
 		            		</div>

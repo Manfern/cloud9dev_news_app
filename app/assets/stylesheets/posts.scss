@@ -10,13 +10,28 @@
     background-color: #fff;
     // height: 100%;
 }
-
+.second .random-block .col-md-2 .btn-more a:hover{
+  display: block;
+  color: #fff;
+}
+h1{
+    padding-top: 0px ;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    width: 100%;
+   
+  }
 #main{
+  
   a{
     color: #fff;
   }
   .btn-more a{
+    display: block;
     color: #000;
+  }
+  .btn-more a:hover{
+    color: #fff;
   }
 }
 .random-block{
@@ -104,8 +119,15 @@ h1{
     background-color: #ECECEC;
     cursor: pointer;
 }
-.col-md-2:hover .btn-more a{
-    // color: #fff;
+
+.btn-more a{
+    display: block;
+    
+  }
+  
+.btn-more a:hover{
+    color: #fff;
+  
 }
 #header h1{
   background-color: #993366;
@@ -143,6 +165,11 @@ h1{
                     color: #000;
                 }
             }
+    .btn-more:hover{
+                    a {
+                    color: #fff;
+                    }
+    }
     .random-block{
         margin-left: 20px;
         .col-md-2{
@@ -206,7 +233,10 @@ h1{
 
 .btn-more:hover{
     background-color: #2765af;
+    
+    a{
     color: #fff;
+    }
 }
 .col-md-2 img{
     cursor: pointer;
@@ -218,6 +248,11 @@ p.front-post{
     padding: 10px;
     height: 100px;
 }
+h1{
+    margin-top: 0px;
+    margin-left: -15px;
+    margin-right: -15px;
+    }
 .second{
     .container{
         // height: 100%;
@@ -226,6 +261,7 @@ p.front-post{
     .container .row{
         background-color: #fff;
     }
+    
     .button{
         
         // background-color: #2765AF;
@@ -233,7 +269,7 @@ p.front-post{
     
     .button:hover {
         background-color: #2765AF;
-        color: #fff;
+        
         
     }
     .button a:hover{
