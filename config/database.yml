@@ -5,10 +5,14 @@
 #   gem 'sqlite3'
 #
 default: &default
-  login: Sergei
+  encoding: unicode
+  database: news_app
+  username: admin
+  password: admin
   adapter: postgresql
   pool: 5
   timeout: 5000
+  host: localhost
 
 development:
   <<: *default
