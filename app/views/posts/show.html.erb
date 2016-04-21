@@ -17,7 +17,7 @@
 	      <p><%= image_tag post.image.url(:thumb) %>
 				<%= post.content.truncate(100) %>
 				<div class="button btn-more  text-left">
-					<%= link_to "Подробнее", post %>
+					<%= link_to "Read More", post %>
 				</div>
 				<br style="clear: both;" /></p>
 	      		
@@ -32,7 +32,7 @@
 		          <%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
 		        </div>
 		        <div class="button btn btn-info">
-		            		<%= link_to "Посмотреть", post %>
+		            		<%= link_to "Read More", post %>
 		        </div>
 	       
 	        <% end %>
@@ -58,7 +58,7 @@
 					Опубликовано <%= time_ago_in_words(@post.created_at) %> ago
 				</p>
 				<div class="button btn-more text-center">
-					<%= link_to "Подробнее", posts_path %>
+					<%= link_to "Read More", posts_path %>
 				</div>
 				<div class="hide-block">
 
@@ -109,7 +109,7 @@
 		            			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
 		            		</div>
 		            		<div class="button btn btn-info">
-		            				<%= link_to "Посмотреть", post %>
+		            				<%= link_to "Read More", post %>
 		            		</div>
 		            		<% end %>
 								</div>
@@ -129,7 +129,7 @@
 							<%= post.content.truncate(80) %>
 
 							<div class="button btn-more  text-center">
-							<%= link_to "Подробнее", post %>
+							<%= link_to "Read More", post %>
 							</div>
 							<br style="clear: both;" /></p>					
 						</div>
@@ -143,7 +143,7 @@
 		            			<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
 		            		</div>
 		            		<div class="button btn btn-info">
-		            			<%= link_to "Посмотреть", post %>
+		            			<%= link_to "Read More", post %>
 		            		</div>
 		            				
 		          <% end %>
@@ -166,7 +166,7 @@
 
 <div class="random-block row">               
 	<% @posts2.shuffle.each_slice(5) do |rows| %>
-	              
+	  <div class="row">
 	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
 	    <% rows.each do |post| %>
 	      <div class="col-md-2 col-xs-5 col-sm-5 news-block">
@@ -189,7 +189,7 @@
 		        		<%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
 		        	</div>
 		        	<div class="button btn btn-info">
-		        		<%= link_to "Посмотреть", post %>
+		        		<%= link_to "Read More", post %>
 		        	</div>
 		        				
 		        <% end %>
@@ -198,7 +198,7 @@
 	      </div>
 	    <% end %>
 	    <div class="col-md-1 col-xs-1 col-sm-1"></div>
-	              
+	  </div>  
 	<% end %>               
 	        						
 </div>  	
